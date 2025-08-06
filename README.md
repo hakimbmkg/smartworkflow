@@ -19,7 +19,16 @@ SeismicWorkFlow merupakan alat bantu untuk mendeteksi kejadian gempa bumi secara
 ## ☕ Buy Me a Coffee
 
 ---
-## Contoh 
+## Contoh
+```
+chmod +x install.sh
+```
+```
+./install.sh
+```
+```
+conda activate smartworkflow
+```   
 ```
 python run.py --help
 ```
