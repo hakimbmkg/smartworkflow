@@ -1,7 +1,7 @@
 # SmartWorkFlow
 
 **Tools Event Detection berbasis metode AI (PhaseNet, Gamma) serta Relokasi Event dengan HypoDD.**  
-Bagian dari proyek **SMART - IDRIP BMKG @ 2025**  
+Bagian dari proyek **SMART - IDRIP BMKG @ 2024**  
 Re-Code by: `@hakimbmkg`
 
 ---
