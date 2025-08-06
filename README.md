@@ -18,8 +18,6 @@ SeismicWorkFlow merupakan alat bantu untuk mendeteksi kejadian gempa bumi secara
 
 ## ☕ Buy Me a Coffee
 
-Jika kamu menggunakan atau terbantu dengan project ini, dukung saya dengan kopi atau bintang repo ini 🌟
-
 ---
 
 ## Referensi 
