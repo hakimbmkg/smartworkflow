@@ -1,4 +1,15 @@
-SMARTWORKFLOW
-
-Project SMART by IDRIP BMKG @ 2025
-
+    """
+    SeismicWorkFLow :: Tools Event Detection berbasis metode AI (PhaseNet, Gamma) serta Relokasi Event dengan HypoDD.
+    Project :: SMART - IDRIP BMKG @ 2025
+    Re-Code :: hakimbmkg 
+    
+    === buy me coffe ===
+    
+    ** WAJIB **  ** WAJIB **  ** WAJIB ** ** WAJIB ** ** WAJIB ** ** WAJIB ** ** WAJIB ** ** WAJIB ** ** WAJIB **
+    ** Untuk menggunakan code ini wajib mereferensi :
+    ** 1. Zhu, Weiqiang, and Gregory C. Beroza. "PhaseNet: A Deep-Neural-Network-Based Seismic Arrival Time Picking Method." arXiv preprint arXiv:1803.03211 (2018)
+    ** 2. Zhu, W., McBrearty, I. W., Mousavi, S. M., Ellsworth, W. L., & Beroza, G. C. (2022). Earthquake phase association using a Bayesian Gaussian Mixture Model. Journal of Geophysical Research: Solid Earth, 127, e2021JB023249. https://doi.org/10.1029/2021JB023249
+    ** 3. Waldhauser, F., dan Ellsworth, W.L., 2000, A Double-difference Earthquake Location Algorithm: Method and Application to the Northern Hayward Fault, California,Bulletin of Seismological Society of America, Vol. 90, 1353-1368
+    ** 4. Waldhauser, F., 2001, hypoDD-Aprogram to Compute Double-Difference Hypocenter Locations, U.S. Geol. Survey
+    ** WAJIB ** ** WAJIB ** ** WAJIB ** ** WAJIB ** ** WAJIB ** ** WAJIB ** ** WAJIB ** ** WAJIB ** ** WAJIB ** 
+    """
