@@ -14,11 +14,6 @@ SeismicWorkFlow merupakan alat bantu untuk mendeteksi kejadian gempa bumi secara
 - **Gamma** untuk asosiasi fase gempa
 - **HypoDD** untuk relokasi event 
 
----
-
-## ☕ Buy Me a Coffee
-
----
 ## Contoh
 ```
 chmod +x install.sh
