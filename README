@@ -12,7 +12,7 @@ SeismicWorkFlow merupakan alat bantu untuk mendeteksi kejadian gempa bumi secara
 
 - **PhaseNet** untuk picking waktu tiba gelombang seismik
 - **Gamma** untuk asosiasi fase gempa
-- **HypoDD** untuk relokasi event secara presisi tinggi
+- **HypoDD** untuk relokasi event 
 
 ---
 
@@ -50,3 +50,4 @@ Jika kamu menggunakan atau terbantu dengan project ini, dukung saya dengan kopi 
 Project ini bersifat open-source, namun **penggunaan akademik dan publikasi WAJIB mencantumkan referensi yang disebutkan di atas.**
 
 ---
+
