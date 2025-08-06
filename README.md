@@ -29,6 +29,36 @@ python run.py config
 ```
 python run.py download_waveforms
 ```
+```
+Set Konfigurasi di Folder config/config.txt
+=================================================
+Konfigurasi 
+=================================================
+
+--- FDSN CLIENT ---
+FDSN_CLIENT = LOCAL
+
+--- KREDENSIAL FDSN (OPSIONAL) ---
+#Kosongkan jika tidak memerlukan autentikasi.
+FDSN_USER = admin
+FDSN_PASSWORD = admin
+
+--- PARAMETER WILAYAH ---
+REGION_NAME = BToru
+
+--- PARAMETER GEOGRAFIS DAN WAKTU ---
+CENTER_LON = 99.10
+CENTER_LAT = 1.60
+H_DEG = 1.5
+V_DEG = 1.5
+STARTTIME_STR = 2025-08-03T00:00:00
+ENDTIME_STR = 2025-08-03T23:59:59
+
+--- PARAMETER JARINGAN DAN CHANNELS ---
+Pisahkan dengan koma, tanpa spasi
+NETWORKS = IA,AM,BT
+CHANNELS = SHZ,EHZ
+```
 ---
 
 ## Referensi 
