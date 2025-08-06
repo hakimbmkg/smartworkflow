@@ -1,0 +1,7 @@
+numpy
+obspy
+pandas
+matplotlib
+pyproj
+tqdm
+git+https://github.com/AI4EPS/GaMMA.git
