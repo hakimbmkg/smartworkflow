@@ -20,6 +20,13 @@ SeismicWorkFlow merupakan alat bantu untuk mendeteksi kejadian gempa bumi secara
 
 ---
 
+---
+```
+python run.py --help
+```
+
+---
+
 ## Referensi 
 
 **WAJIB mencantumkan referensi berikut dalam penggunaan atau publikasi yang memanfaatkan kode ini:**
