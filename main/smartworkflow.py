@@ -65,7 +65,7 @@ class SmartWorkflow:
         print("HypoDD tidak ditemukan. Memulai proses penyiapan otomatis...")
         
         if not all(shutil.which(cmd) for cmd in ["wget", "tar", "gfortran", "make"]):
-            raise EnvironmentError("Ketergantungan tidak terpenuhi. Pastikan 'wget', 'tar', 'gfortran', dan 'make' terpasang.")
+            raise EnvironmentError("Pastikan 'wget', 'tar', 'gfortran', dan 'make' terpasang.")
 
         core_dir = os.path.join(self.base_dir, "core")
         os.makedirs(core_dir, exist_ok=True)
@@ -124,11 +124,11 @@ class SmartWorkflow:
         self.station_plot_path = os.path.join(self.root_dir, "station_locations.png")
         
     def _prepare_hypodd_executables(self):
-        """Menyalin file eksekusi HypoDD ke direktori kerja."""
+        """Copy file eksekusi HypoDD ke direktori kerja."""
         for exe in ["ph2dt", "hypoDD"]:
             source_path = os.path.join(self.hypodd_exec_path, exe, exe)
             if not os.path.exists(source_path):
-                 raise FileNotFoundError(f"File eksekusi '{exe}' tidak ditemukan di path yang diharapkan: {source_path}")
+                 raise FileNotFoundError(f"File eksekusi '{exe}' tidak ditemukan di path: {source_path}")
             
             target_path = os.path.join(self.hypodd_dir, exe)
             command = f"cp {source_path} {target_path}"
@@ -186,7 +186,7 @@ class SmartWorkflow:
             client = self._get_fdsn_client(config)
             events = client.get_events(starttime=config["starttime"], endtime=config["endtime"], minlongitude=config["xlim_degree"][0], maxlongitude=config["xlim_degree"][1], minlatitude=config["ylim_degree"][0], maxlatitude=config["ylim_degree"][1])
         except Exception:
-            print(f"Gagal menggunakan klien '{config['client']}', mencoba 'IRIS' sebagai fallback...")
+            print(f"Gagal terhubung dengan klien '{config['client']}', mencoba 'IRIS' sebagai fallback...")
             client = Client("iris")
             events = client.get_events(starttime=config["starttime"], endtime=config["endtime"], minlongitude=config["xlim_degree"][0], maxlongitude=config["xlim_degree"][1], minlatitude=config["ylim_degree"][0], maxlatitude=config["ylim_degree"][1])
         print(f"Jumlah gempa yang ditemukan: {len(events)}")
@@ -359,7 +359,7 @@ class SmartWorkflow:
         print(f"File fase HypoDD berhasil disimpan di: {self.hypodd_phase_path}")
 
     def _create_hypodd_inp(self):
-        """Membuat file hypoDD.inp standar berdasarkan referensi."""
+        """Membuat file hypoDD.inp *catatan : rubah velocity model sesuai kebutuhan"""
         hypodd_inp_content = """
 * RELOC.INP:
 *--- input file selection
