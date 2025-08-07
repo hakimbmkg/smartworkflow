@@ -55,7 +55,6 @@ class SmartWorkflow:
     def _setup_hypodd_environment(self):
         """
         Memeriksa, Download, dan mengompilasi HypoDD jika belum ada,
-        sesuai dengan referensi dari codes.ipynb.
         """
         print("Memeriksa instalasi HypoDD...")
         hypodd_binary = os.path.join(self.hypodd_exec_path, "hypoDD", "hypoDD")
