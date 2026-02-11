@@ -233,12 +233,45 @@ class SmartWorkflow:
         print(f"Metadata stasiun (JSON) berhasil disimpan di: {self.stations_json_path}")
         with open(self.stations_pkl_path, "wb") as fp: pickle.dump(stations, fp)
         print(f"Objek stasiun (PKL) berhasil disimpan di: {self.stations_pkl_path}")
+        # if (plot or save_plot) and station_locs:
+        #     station_df = pd.DataFrame.from_dict(station_locs, orient="index")
+        #     plt.figure(figsize=(10, 8)); plt.plot(station_df["longitude"], station_df["latitude"], "^", label="Stasiun"); plt.xlabel("Longitude"); plt.ylabel("Latitude"); plt.axis("scaled"); plt.xlim(config["xlim_degree"]); plt.ylim(config["ylim_degree"]); plt.legend(); plt.title(f"Lokasi Stasiun ({len(station_df)} stasiun)")
+        #     if save_plot:
+        #         plt.savefig(self.station_plot_path); print(f"Plot lokasi stasiun disimpan di: {self.station_plot_path}")
+        #     if plot: plt.show()
+        #     plt.close()
         if (plot or save_plot) and station_locs:
             station_df = pd.DataFrame.from_dict(station_locs, orient="index")
-            plt.figure(figsize=(10, 8)); plt.plot(station_df["longitude"], station_df["latitude"], "^", label="Stasiun"); plt.xlabel("Longitude"); plt.ylabel("Latitude"); plt.axis("scaled"); plt.xlim(config["xlim_degree"]); plt.ylim(config["ylim_degree"]); plt.legend(); plt.title(f"Lokasi Stasiun ({len(station_df)} stasiun)")
+            
+            fig, ax = plt.subplots(figsize=(10, 8), subplot_kw={'projection': ccrs.PlateCarree()})
+            
+            ax.add_feature(cfeature.LAND, facecolor='lightgray')
+            ax.add_feature(cfeature.OCEAN, facecolor='lightblue')
+            ax.add_feature(cfeature.COASTLINE, linewidth=1)
+            ax.add_feature(cfeature.BORDERS, linestyle=':', alpha=0.7)
+            
+            # Menambahkan gridline
+            gl = ax.gridlines(draw_labels=True, dms=True, x_inline=False, y_inline=False)
+            gl.top_labels = False
+            gl.right_labels = False
+
+            # Plot lokasi stasiun
+            ax.scatter(station_df["longitude"], station_df["latitude"], 
+                       marker="^", color="red", edgecolors="black", 
+                       label="Stasiun", transform=ccrs.PlateCarree(), zorder=5)
+
+            ax.set_extent([config["xlim_degree"][0], config["xlim_degree"][1], 
+                           config["ylim_degree"][0], config["ylim_degree"][1]], 
+                          crs=ccrs.PlateCarree())
+            
+            plt.legend(loc="lower right")
+            plt.title(f"Lokasi Stasiun ({len(station_df)} stasiun)")
+
             if save_plot:
-                plt.savefig(self.station_plot_path); print(f"Plot lokasi stasiun disimpan di: {self.station_plot_path}")
-            if plot: plt.show()
+                plt.savefig(self.station_plot_path)
+                print(f"Plot lokasi stasiun disimpan di: {self.station_plot_path}")
+            if plot: 
+                plt.show()
             plt.close()
 
     def download_waveforms(self, max_threads=4):
